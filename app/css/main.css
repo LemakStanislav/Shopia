@@ -1,0 +1,7 @@
+body div {
+  color: #000;
+  width: 200px; }
+  body div a {
+    text-transform: none; }
+  body div p {
+    display: inline-block; }
