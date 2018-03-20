@@ -1,0 +1,108 @@
+body, html {
+  height: 100%;
+  font-family: 'lato', serif;
+  font-size: 16px; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+.clearfix {
+  clear: both; }
+
+/*header*/
+.head {
+  background-color: #f2f2f2;
+  color: #393939;
+  font-size: 12px; }
+
+.upbar {
+  width: 80%;
+  height: 40px;
+  margin: auto; }
+
+.phone {
+  text-align: left;
+  width: 30%;
+  float: left;
+  margin: auto; }
+
+.phone a, .upmenu ul li a {
+  text-decoration: none;
+  color: #393939; }
+
+.upmenu {
+  float: left;
+  text-decoration: none;
+  width: 70%;
+  margin: auto;
+  text-align: right; }
+  .upmenu ul {
+    float: right; }
+    .upmenu ul li {
+      margin-left: 1rem;
+      float: left;
+      list-style-type: none; }
+
+.upmenu ul li a:hover, .phone a p:hover, phone a:hover {
+  color: #7f7f7f; }
+
+.phone a p {
+  display: inline-block;
+  margin-left: 1rem; }
+
+/*nav menu*/
+.nav {
+  width: 80%;
+  height: 130px;
+  line-height: 130px;
+  text-align: center;
+  margin: auto; }
+
+.menu, .logo, .select, .social_up {
+  display: inline-block;
+  float: left; }
+
+.menu {
+  width: 40%; }
+
+.menu ul li {
+  float: left;
+  margin-right: 30px;
+  list-style-type: none;
+  text-transform: capitalize;
+  color: #000000;
+  font-size: 1.5rem;
+  font-family: "Playfair Display", serif; }
+
+.menu ul li a:hover {
+  color: #7f7f7f; }
+
+.logo {
+  width: 20%;
+  text-align: left;
+  margin-top: 28px; }
+
+.social_up a {
+  border: 2px #d9bf8f solid;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  color: #d9bf8f;
+  padding: 10px;
+  margin-left: 10px; }
+
+.social_up a:hover {
+  color: rgba(186, 50, 39, 0.79);
+  border-color: rgba(186, 50, 39, 0.79); }
+
+.social_up {
+  text-align: right;
+  width: 30%; }
+
+.select {
+  width: 10%;
+  text-align: right; }
