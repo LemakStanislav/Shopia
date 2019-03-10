@@ -11,8 +11,9 @@ var del           = require('del'); // Подключаем библиотеку
 var imagemin      = require('gulp-imagemin'); // Подключаем библиотеку для работы с изображениями
 var pngquant      = require('imagemin-pngquant'); // Подключаем библиотеку для работы с png
 var cache         = require('gulp-cache'); // Подключаем библиотеку кеширования
-var  autoprefixer = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
-
+var autoprefixer  = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
+var useref        = require('gulp-useref'); //объединяет любое количество CSS и JavaScript файлов в один с помощью комментариев: начальный «<!—build:» и конечный «<!—endbuild—>»
+var gulpIf        = require('gulp-if');
 
 gulp.task('sass', function(){ // Создаем таск "sass"
     return gulp.src('app/scss/**/*.scss') // Берем источник
@@ -48,10 +49,11 @@ gulp.task('css-libs', ['sass'], function() {
 });
 
 gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
-    gulp.watch('app/scss/**/*.scss', ['sass']); // Наблюдение за sass файлами
+    gulp.watch('app/scss/**/*.scss', ['sass']);  // Наблюдение за sass файлами
     // Наблюдение за другими типами файлов
     gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
     gulp.watch('app/js/**/*.js', browserSync.reload); // Наблюдение за JS файлами в папке js
+    gulp.watch('app/css/**/*.css', browserSync.reload); // Наблюдение за CSS файлами в папке css
 });
 
 gulp.task('img', function() {
@@ -68,8 +70,21 @@ gulp.task('img', function() {
 gulp.task('clean', function() {
     return del.sync('dist'); // Удаляем папку dist перед сборкой
 });
-
-gulp.task('build', ['clean', 'sass', 'img', 'scripts'], function() {
+/*
+gulp.task('minjs', function() {
+    return gulp.src('app/js-main/main.js')
+    .pipe(concat('main.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('app/js'))     
+});*/
+/*
+gulp.task('useref', function(){
+    return gulp.src('app/*.html')
+        .pipe(useref())
+        .pipe(gulpIf('*.js', uglify()))
+        .pipe(gulp.dest('dist'))
+});*/
+gulp.task('build', ['clean', 'sass', 'img', 'scripts', /*'useref'*/], function() {
 
     var buildCss = gulp.src([ // Переносим библиотеки в продакшен
         'app/css/style.css',
@@ -81,10 +96,10 @@ gulp.task('build', ['clean', 'sass', 'img', 'scripts'], function() {
     .pipe(gulp.dest('dist/fonts'))
 
     var buildJs = gulp.src('app/js/**/*') // Переносим скрипты в продакшен
-    .pipe(gulp.dest('dist/js'))
+    .pipe(gulp.dest('dist/js'))  
 
     var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('dist')); 
 
 });
 
