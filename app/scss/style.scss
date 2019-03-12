@@ -18,6 +18,48 @@ a{
   clear: both;
 }
 
+/*section title*/
+.content-title {
+  position: relative;
+  font-family: "Playfair Display";
+  font-style: italic;
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 65px;
+  margin-top: 100px;
+  i {
+    position: absolute;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    transform: rotate(-45deg);
+    bottom: 9px;
+    background-color: #d9bf8f
+  }
+  i:nth-child(2) {
+    right: 30%;
+  }
+  i:nth-child(3) {
+    left: 30%;
+  }
+  b {
+    position: absolute;
+    display: inline-block;
+    width: 30%;
+    height: 1px;
+    background-color: #eaeaea;
+
+  }
+  b:nth-child(1) {
+    left: -75px;
+    top: 16px;
+  }
+  b:nth-child(4) {
+    right: -75px;
+    top: 16px;
+  }
+}
+
 /*header*/
 .header {
   box-sizing: content-box;
@@ -489,7 +531,130 @@ a{
   }
 }
 
+/*album */
+.collection {
+  width: 1290px;
+  margin-right: auto;
+  margin-left: auto;
 
+  .content-title {
+    position: relative;
+    font-family: "Playfair Display";
+    font-style: italic;
+    text-transform: capitalize;
+    text-align: center;
+    margin-bottom: 65px;
+    margin-top: 100px;
+    i {
+      position: absolute;
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      transform: rotate(-45deg);
+      bottom: 9px;
+      background-color: #d9bf8f
+    }
+    i:nth-child(2) {
+      right: 30%;
+    }
+    i:nth-child(3) {
+      left: 30%;
+    }
+    b {
+      position: absolute;
+      display: inline-block;
+      width: 30%;
+      height: 1px;
+      background-color: #eaeaea;
+
+    }
+    b:nth-child(1) {
+      left: -75px;
+      top: 16px;
+    }
+    b:nth-child(4) {
+      right: -75px;
+      top: 16px;
+    }
+  }
+
+  .album-grid{
+    padding: 16px;
+    border: solid  1px #eaeaea;
+
+    .album-grid-item{
+      float: left;
+      width: 300px;
+      height: 350px;
+      background-size: cover;
+      margin-right: 18px;
+      .inner-album-grid{
+        position: relative;
+        width: 100%;
+        height: 100%;
+      &:hover{
+        background-color: rgba(0, 0, 0, 0.60);
+        }
+        .add-to-crt-btn{
+          position: relative;
+          margin: 0 auto;
+          top: 305px;
+          cursor: pointer;
+          text-align: center;
+          height: 0;
+          width: 192px;
+          line-height: 44px;
+          border-bottom: 44px solid #000;
+          border-left: 38px solid transparent;
+          border-right: 38px solid transparent;
+
+          span{
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: .9rem;
+
+          }
+        }
+        .off-circle{
+          position: absolute;
+          top:16px;
+          left: 16px;
+          color: #fff;
+          text-align: center;
+          line-height: 60px;
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+          background-color: #feab12;
+          span{
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 1.25rem;
+            margin-left: 10px;
+          }
+          b{
+            vertical-align: top;
+            font-size: .6rem;
+          }
+        }
+        .active-btn{
+          border-bottom: 44px solid #f09d66;
+        }
+      }
+    }
+    .album-grid-item:nth-child(4),.album-grid-item:nth-child(8){
+      margin-right: 0;
+    }
+    .album-grid-item:nth-child(5),.album-grid-item:nth-child(6),.album-grid-item:nth-child(7),.album-grid-item:nth-child(8){
+      margin-top: 18px;
+    }
+  }
+
+}
+
+/*brands carousel*/
 
 
 

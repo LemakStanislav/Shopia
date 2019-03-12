@@ -126,6 +126,20 @@ $(function () {
 
 });
 
+// Cart button toggle
+$(function () {
+
+    var cartbtn = $(".add-to-crt-btn");
+
+
+    cartbtn.click(function () {
+
+        $(this).toggleClass("active-btn");
+
+    });
+
+
+});
 
 // Masonry
 /*
@@ -134,3 +148,10 @@ $('.grid').masonry({
     itemSelector: '.grid-item'
 });
 });*/
+
+
+
+//Owl-carousel
+$(document).ready(function(){
+    $('.owl-carousel').owlCarousel();
+});
